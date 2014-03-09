@@ -7,7 +7,7 @@ Automatically serialize JSON response to your object model.
 
 ### AFNetworking
 
-````Objective-c
+```Objective-c
 AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://graph.facebook.com/"]];
 [operationManager setResponseSerializer:[[MUJSONResponseSerializer alloc] init]];
 [(MUJSONResponseSerializer *)[operationManager responseSerializer] setResponseObjectClass:[FBUser class]];
@@ -18,12 +18,12 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 {                                                
  	// response object is your FBUser object with all properties filled   
 } 			  failure:^(AFHTTPRequestOperation *operation, NSError *error){}];
-
+```
 
 ### Custom Model Class
 
 
-````Objective-c
+```Objective-c
 #import "MUJSONResponseSerializer.h"
 #import "FBWork.h"
 
@@ -46,8 +46,9 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 @property (nonatomic, strong) NSString *username;
 
 @end
+```
 
-````Objective-c
+```Objective-c
 #import "FBUser.h"
 
 @implementation FBUser
@@ -70,4 +71,5 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 }
 
 @end
+```
 
