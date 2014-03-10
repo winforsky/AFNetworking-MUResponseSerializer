@@ -84,3 +84,11 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 platform :ios, '7.0'
 pod "AFNetworking-MUJSONResponseSerializer"
 ```
+
+### Contact
+
+## Contact
+
+* [@MartinUlianko](https://twitter.com/MartinUlianko) on Twitter
+* [@Ulianko](https://github.com/Ulianko) on Github
+* <a href="mailTo:martin@ulianko.com">martin@ulianko.com</a>
