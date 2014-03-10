@@ -57,6 +57,7 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 {
     if(self = [super init])
     {
+        // There is no need to map all properties, only those which you want to have diffrent names;
         self.propertyMap = @{@"id":         @"ident",
                              @"first_name": @"firstName",
                              @"last_name":  @"lastName",
@@ -73,3 +74,13 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 @end
 ```
 
+### Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the ["Cocoapod.org" guide for more information](http://cocoapods.org).
+
+#### Podfile
+
+```ruby
+platform :ios, '7.0'
+pod "AFNetworking-MUJSONResponseSerializer"
+```
