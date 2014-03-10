@@ -85,8 +85,6 @@ platform :ios, '7.0'
 pod "AFNetworking-MUJSONResponseSerializer"
 ```
 
-### Contact
-
 ## Contact
 
 * [@MartinUlianko](https://twitter.com/MartinUlianko) on Twitter
