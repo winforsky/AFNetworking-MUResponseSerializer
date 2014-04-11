@@ -9,8 +9,7 @@ Automatically serialize JSON response to your object model.
 
 ```Objective-c
 AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://graph.facebook.com/"]];
-[operationManager setResponseSerializer:[[MUJSONResponseSerializer alloc] init]];
-[(MUJSONResponseSerializer *)[operationManager responseSerializer] setResponseObjectClass:[FBUser class]];
+[operationManager setResponseSerializer:[[MUJSONResponseSerializer alloc] initWithResponseClass:[FBUser class]]];
 
 [operationManager GET:@"me" 
 		   parameters:nil
@@ -20,14 +19,14 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 } 			  failure:^(AFHTTPRequestOperation *operation, NSError *error){}];
 ```
 
-### Custom Model Class
+### NSObjects
 
 
 ```Objective-c
 #import "MUJSONResponseSerializer.h"
 #import "FBWork.h"
 
-@interface FBUser : MUJSONResponseObject
+@interface FBUser : NSObject
 
 @property (nonatomic, strong) NSString *ident;
 @property (nonatomic, strong) NSString *name;
@@ -53,22 +52,53 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 
 @implementation FBUser
 
-- (instancetype)init
+- (NSDictionary *)propertyMap
 {
-    if(self = [super init])
-    {
-        // There is no need to map all properties, only those which you want to have diffrent names;
-        self.propertyMap = @{@"id":         @"ident",
-                             @"first_name": @"firstName",
-                             @"last_name":  @"lastName",
-                             @"updated_time": @"updatedTime"};
-    }
-    return self;
+    
+    // There is no need to map all properties, only those which you want to have diffrent names;
+    return  self.propertyMap = @{@"id":         @"ident",
+                         @"first_name": @"firstName",
+                         @"last_name":  @"lastName",
+                         @"updated_time": @"updatedTime"};
 }
 
 - (Class)classForElementsInArrayProperty:(NSString *)propertyName
 {
     return [FBWork class];
+}
+
+@end
+```
+
+### NSManagedObjects
+We need implement initWithJSON into NSManagedObject. NSManagedObject+MUResponseObject.h category initialize NSManagedObject and fill it up with properties. 
+
+```Objective-c
+@implementation NSManagedObject (MUResponseObject)
+
+- (NSManagedObject *)initWithJSON:(id)JSON
+{
+    NSManagedObjectContext *context = nil; // get your context if you want, e.g. from singleton object
+    
+    if(self = [self initWithContext:context])
+    {
+        [self fillWithJSON:JSON];
+    }
+    
+    return self;
+}
+
+- (NSManagedObject *)initWithContext:(NSManagedObjectContext *)context
+{
+    NSString *entityName = NSStringFromClass([self class]);
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
+    
+    if(self = [self initWithEntity:entity insertIntoManagedObjectContext:context])
+    {
+        
+    }
+    
+    return self;
 }
 
 @end
@@ -82,7 +112,7 @@ AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManage
 
 ```ruby
 platform :ios, '7.0'
-pod "AFNetworking-MUJSONResponseSerializer"
+pod "AFNetworking-MUNResponseSerializer"
 ```
 
 ## Contact
