@@ -2,6 +2,7 @@ AFNetworking-MUResponseSerializer
 =====================================
 
 Automatically serialize JSON response to your object model. It also work with Core Data NSManagedObjects.
+It uses NSObject category <a href="https://github.com/Ulianko/NSObject-MUJSONMapping">NSObject-MUJSONMapping</a> for mapping JSON values to properties.
 
 # Usage
 
