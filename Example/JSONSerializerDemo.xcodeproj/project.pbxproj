@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11B702771B5248669A283F7C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FCC7B38DF4F959EEEAC7E /* libPods.a */; };
-		1292F8B118CCB69F00E81ACC /* MUJSONResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8B018CCB69F00E81ACC /* MUJSONResponseSerializer.m */; };
 		1292F8BD18CCB6AD00E81ACC /* FBEmployer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8B418CCB6AD00E81ACC /* FBEmployer.m */; };
 		1292F8BE18CCB6AD00E81ACC /* FBLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8B618CCB6AD00E81ACC /* FBLocation.m */; };
 		1292F8BF18CCB6AD00E81ACC /* FBPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8B818CCB6AD00E81ACC /* FBPosition.m */; };
@@ -37,8 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1292F8AF18CCB69F00E81ACC /* MUJSONResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUJSONResponseSerializer.h; sourceTree = "<group>"; };
-		1292F8B018CCB69F00E81ACC /* MUJSONResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUJSONResponseSerializer.m; sourceTree = "<group>"; };
 		1292F8B318CCB6AD00E81ACC /* FBEmployer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEmployer.h; sourceTree = "<group>"; };
 		1292F8B418CCB6AD00E81ACC /* FBEmployer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEmployer.m; sourceTree = "<group>"; };
 		1292F8B518CCB6AD00E81ACC /* FBLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLocation.h; sourceTree = "<group>"; };
@@ -91,15 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1292F8AE18CCB69F00E81ACC /* MUJSONResponseSerializer */ = {
-			isa = PBXGroup;
-			children = (
-				1292F8AF18CCB69F00E81ACC /* MUJSONResponseSerializer.h */,
-				1292F8B018CCB69F00E81ACC /* MUJSONResponseSerializer.m */,
-			);
-			path = MUJSONResponseSerializer;
-			sourceTree = "<group>";
-		};
 		1292F8B218CCB6AD00E81ACC /* FBUserModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +108,6 @@
 		12C66EC818C8E0D400CFBD5C = {
 			isa = PBXGroup;
 			children = (
-				1292F8AE18CCB69F00E81ACC /* MUJSONResponseSerializer */,
 				12C66EDA18C8E0D400CFBD5C /* JSONSerializerDemo */,
 				12C66ED318C8E0D400CFBD5C /* Frameworks */,
 				12C66ED218C8E0D400CFBD5C /* Products */,
@@ -306,7 +293,6 @@
 				1292F8BF18CCB6AD00E81ACC /* FBPosition.m in Sources */,
 				1292F8BE18CCB6AD00E81ACC /* FBLocation.m in Sources */,
 				1292F8BD18CCB6AD00E81ACC /* FBEmployer.m in Sources */,
-				1292F8B118CCB69F00E81ACC /* MUJSONResponseSerializer.m in Sources */,
 				12C66EE518C8E0D400CFBD5C /* MUAppDelegate.m in Sources */,
 				1292F8C018CCB6AD00E81ACC /* FBUser.m in Sources */,
 				1292F8C118CCB6AD00E81ACC /* FBWork.m in Sources */,

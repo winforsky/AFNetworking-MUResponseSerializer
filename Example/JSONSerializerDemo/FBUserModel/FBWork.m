@@ -12,14 +12,10 @@
 
 @synthesize employer = _employer;
 
-- (instancetype)init
+- (NSDictionary *)propertyMap
 {
-    if(self = [super init])
-    {
-        self.propertyMap = @{@"start_date": @"startDate",
-                             @"emd_name":   @"firstName"};
-    }
-    return self;
+    return = @{@"start_date": @"startDate",
+               @"emd_name":   @"firstName"};
 }
 
 - (void)setEmployer:(FBEmployer *)employer

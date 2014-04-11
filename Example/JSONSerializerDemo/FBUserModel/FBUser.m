@@ -10,16 +10,12 @@
 
 @implementation FBUser
 
-- (instancetype)init
+- (NSDictionary *)propertyMap
 {
-    if(self = [super init])
-    {
-        self.propertyMap = @{@"id":         @"ident",
-                             @"first_name": @"firstName",
-                             @"last_name":  @"lastName",
-                             @"updated_time": @"updatedTime"};
-    }
-    return self;
+    return @{@"id": @"ident",
+             @"first_name": @"firstName",
+             @"last_name":  @"lastName",
+             @"updated_time": @"updatedTime"};
 }
 
 - (Class)classForElementsInArrayProperty:(NSString *)propertyName

@@ -8,7 +8,7 @@
 
 #import "MUJSONResponseSerializer.h"
 
-@interface FBPosition : MUJSONResponseObject
+@interface FBPosition : NSObject
 
 @property (nonatomic, strong) NSString *ident;
 @property (nonatomic, strong) NSString *name;

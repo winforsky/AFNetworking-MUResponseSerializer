@@ -9,7 +9,7 @@
 #import "MUJSONResponseSerializer.h"
 #import "FBWork.h"
 
-@interface FBUser : MUJSONResponseObject
+@interface FBUser : NSObject
 
 @property (nonatomic, strong) NSString *ident;
 @property (nonatomic, strong) NSString *name;

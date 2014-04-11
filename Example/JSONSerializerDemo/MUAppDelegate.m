@@ -7,7 +7,7 @@
 //
 
 #import "MUAppDelegate.h"
-#import "MUJSONResponseSerializer.h"
+#import <AFNetworking-MUResponseSerializer.h>
 #import "FBUser.h"
 #import <AFNetworking/AFNetworking.h>
 
@@ -16,13 +16,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     AFHTTPRequestOperationManager *operationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://graph.facebook.com/"]];
-    [operationManager setResponseSerializer:[[MUJSONResponseSerializer alloc] init]];
-    [(MUJSONResponseSerializer *)[operationManager responseSerializer] setResponseObjectClass:[FBUser class]];
+    [operationManager setResponseSerializer:[[MUResponseSerializer alloc] initWithResponseClass:[FBUser class]]];
     
     // https://developers.facebook.com/tools/explorer/
     NSLog(@"========WARINING=========");
     NSLog(@")Dont forget fill your access token, you will find it at https://developers.facebook.com/tools/explorer/");
-    NSString *access_token = @"CAACEdEose0cBAFPVEdfqI2jBGeZA3nvcGqxeAMn10DwdnaBb8jstE5oiKjxVZA6ph8JQKfahAenWHuRaYDfZAgCZBh7lWpVduGEZCE3hEwMlRXP3XLyZAX4tY6dP6MDqAeRZBCEyShUZCK4RFsC9UGXv5hKbljZAnVdzFSaF4wsZCNIr0HofBWJ0TxwMDgUM8sWZBoZD";
+    NSString *access_token = @"";
     
     
     [operationManager GET:@"me"

@@ -10,13 +10,9 @@
 
 @implementation FBEmployer
 
-- (instancetype)init
+- (NSDictionary *)propertyMap
 {
-    if(self = [super init])
-    {
-        self.propertyMap = @{@"id": @"ident"};
-    }
-    return self;
+  return @{@"id": @"ident"};
 }
 
 @end

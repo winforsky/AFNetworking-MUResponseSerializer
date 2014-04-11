@@ -11,7 +11,7 @@
 #import "FBLocation.h"
 #import "FBPosition.h"
 
-@interface FBWork : MUJSONResponseObject
+@interface FBWork : NSObject
 
 @property (nonatomic, strong) FBEmployer *employer;
 @property (nonatomic, strong) FBLocation *location;
