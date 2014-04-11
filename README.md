@@ -1,7 +1,7 @@
-AFNetworking-MUJSONResponseSerializer
+AFNetworking-MUResponseSerializer
 =====================================
 
-Automatically serialize JSON response to your object model. 
+Automatically serialize JSON response to your object model. It also work with Core Data NSManagedObjects.
 
 # Usage
 
